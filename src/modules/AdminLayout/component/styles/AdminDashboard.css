@@ -1,0 +1,56 @@
+/* Admin Dashboard – hub grid layout (co-located with AdminDashBoard.jsx) */
+/* Respects prefers-reduced-motion for EN 301 549 / WCAG accessibility. */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ai-pulse {
+    animation: none;
+  }
+}
+
+@layer components {
+  .dashboard-hub-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+      "center"
+      "top-left"
+      "top-right"
+      "bottom-left"
+      "bottom-right";
+    gap: 1.5rem;
+    width: 100%;
+    max-width: min(100%, 28rem);
+    margin-inline: auto;
+  }
+
+  .dashboard-hub-grid .grid-area-center {
+    grid-area: center;
+  }
+  .dashboard-hub-grid .grid-area-top-left {
+    grid-area: top-left;
+  }
+  .dashboard-hub-grid .grid-area-top-right {
+    grid-area: top-right;
+  }
+  .dashboard-hub-grid .grid-area-bottom-left {
+    grid-area: bottom-left;
+  }
+  .dashboard-hub-grid .grid-area-bottom-right {
+    grid-area: bottom-right;
+  }
+
+  @media (min-width: 1024px) {
+    .dashboard-hub-grid {
+      grid-template-columns: 1fr 1.5fr 1fr;
+      grid-template-rows: 1fr 1.5fr 1fr;
+      grid-template-areas:
+        "top-left . top-right"
+        ". center ."
+        "bottom-left . bottom-right";
+      gap: 1.5rem;
+      min-height: 420px;
+      max-width: none;
+    }
+  }
+}

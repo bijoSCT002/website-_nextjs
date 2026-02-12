@@ -1,0 +1,42 @@
+export const DASHBOARD_SECTIONS = [
+    {
+        id: "smarq",
+        label: "SMARQ",
+        to: "/smarq",
+        description: "AI core · Sentiment & analytics",
+        gridArea: "center",
+        isPrimary: true,
+    },
+    {
+        id: "smiley",
+        label: "SMILEy",
+        to: "/smiley",
+        description: "AI-powered insights",
+        gridArea: "top-right",
+        isPrimary: false,
+    },
+    {
+        id: "settings",
+        label: "Settings",
+        to: "/setting",
+        description: "Configuration",
+        gridArea: "top-left",
+        isPrimary: false,
+    },
+    {
+        id: "packages",
+        label: "Packages",
+        to: "/packages",
+        description: "Plans & bundles",
+        gridArea: "bottom-right",
+        isPrimary: false,
+    },
+    {
+        id: "support",
+        label: "Support",
+        to: "/support",
+        description: "Help & resources",
+        gridArea: "bottom-left",
+        isPrimary: false,
+    },
+];

@@ -1,0 +1,252 @@
+/* SMARQ Project Hub – industrial dark theme, glassmorphism, subtle neon */
+/* Layout: 8px grid, semantic sections, WCAG-aligned hierarchy */
+
+.smarq-hub {
+  --smarq-panel-bg: rgba(255, 255, 255, 0.03);
+  --smarq-panel-border: rgba(148, 163, 184, 0.12);
+  --smarq-divider: rgba(148, 163, 184, 0.15);
+  --smarq-glow: rgba(34, 211, 238, 0.08);
+  --smarq-spacing: 8px;
+  --smarq-section-gap: 24px;
+}
+
+.smarq-hub__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--smarq-section-gap);
+}
+
+.smarq-hub__section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.smarq-hub__section + .smarq-hub__section {
+  padding-top: var(--smarq-section-gap);
+  border-top: 1px solid var(--smarq-panel-border);
+}
+
+.smarq-hub__section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.85);
+  margin: 0 0 12px 0;
+  padding: 0;
+  line-height: 1.25;
+}
+
+/* Industrial layout – structured, high-contrast sections */
+.smarq-hub--industrial .smarq-hub__content {
+  gap: var(--smarq-section-gap);
+}
+
+.smarq-hub--industrial .smarq-hub__section {
+  gap: 12px;
+}
+
+.smarq-hub--industrial .smarq-hub__section + .smarq-hub__section {
+  padding-top: var(--smarq-section-gap);
+  margin-top: 0;
+  border-top: 1px solid var(--smarq-panel-border);
+}
+
+.smarq-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--smarq-divider) 20%,
+    var(--smarq-divider) 80%,
+    transparent 100%
+  );
+  margin: 0;
+  border: 0;
+}
+
+.smarq-panel {
+  background: var(--smarq-panel-bg);
+  border: 1px solid var(--smarq-panel-border);
+  border-radius: 0.75rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.smarq-panel--glow:hover {
+  box-shadow: 0 0 0 1px var(--smarq-panel-border), 0 0 24px -4px var(--smarq-glow);
+}
+
+.smarq-card {
+  background: var(--smarq-panel-bg);
+  border: 1px solid var(--smarq-panel-border);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.smarq-card:hover {
+  border-color: rgba(148, 163, 184, 0.2);
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.3), 0 0 20px -6px var(--smarq-glow);
+}
+
+.smarq-card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.5);
+}
+
+.smarq-card--recent {
+  border-color: rgba(34, 211, 238, 0.15);
+}
+
+.smarq-utility-bar {
+  border-top: 1px solid var(--smarq-panel-border);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.smarq-list-item {
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.smarq-list-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.smarq-list-item:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px rgba(34, 211, 238, 0.4);
+}
+
+.smarq-list-item--selected {
+  background: rgba(34, 211, 238, 0.06);
+  border-left-color: rgba(34, 211, 238, 0.4);
+}
+
+.smarq-status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.smarq-status-dot--active {
+  background: rgba(34, 197, 94, 0.8);
+}
+
+.smarq-status-dot--archived {
+  background: rgba(148, 163, 184, 0.6);
+}
+
+.smarq-status-dot--draft {
+  background: rgba(234, 179, 8, 0.7);
+}
+
+/* Horizontal scroll rows – scroll left-to-right when content exceeds viewport */
+.smarq-scroll-row {
+  margin: 0;
+}
+
+.smarq-hub__section .smarq-scroll-row__track + .smarq-scroll-row__track {
+  margin-top: 16px;
+}
+
+.smarq-scroll-row__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--smarq-divider, rgba(148, 163, 184, 0.9));
+  margin: 0 0 calc(var(--smarq-spacing) * 2) 0;
+  padding: 0;
+}
+
+.smarq-scroll-row__track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.smarq-scroll-row__track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.smarq-scroll-row__track::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.smarq-scroll-row__track::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 3px;
+}
+
+.smarq-scroll-row__track::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+.smarq-scroll-row__item {
+  flex-shrink: 0;
+  width: 220px;
+  min-width: 200px;
+  max-width: 260px;
+}
+
+.smarq-scroll-row__item > * {
+  width: 100%;
+  min-height: 120px;
+  box-sizing: border-box;
+}
+
+.smarq-scroll-row__item--empty {
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--smarq-panel-bg);
+  border: 1px dashed var(--smarq-panel-border);
+  border-radius: 0.5rem;
+}
+
+/* ScrollProjects – both project rows share one horizontal scroll */
+.scroll-projects {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-projects::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-projects::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.scroll-projects::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 3px;
+}
+
+.scroll-projects::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+.scroll-projects__track {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: max-content;
+  min-width: 100%;
+}
+
+.scroll-projects__row {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
