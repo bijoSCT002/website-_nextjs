@@ -4,3 +4,5 @@ export * from "./ProjectCard";
 export * from "./CreateProjectCard";
 export * from "./ArchiveSection";
 export * from "./UtilityBar";
+export * from "./RecentlyViewed";
+export * from "./ProjectList"
