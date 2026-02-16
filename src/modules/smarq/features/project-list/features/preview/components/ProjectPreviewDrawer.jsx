@@ -11,13 +11,13 @@ export function ProjectPreviewDrawer({ open, project, onClose }) {
       aria-modal="true"
       aria-label="Project preview"
     >
-      <div className="mx-4 max-w-lg rounded-lg border border-slate-600 bg-slate-800 p-6 shadow-xl">
-        <h3 className="text-lg font-medium theme-text">{project?.name ?? "Preview"}</h3>
-        <p className="mt-2 text-sm theme-text-muted">{project?.owner ?? ""}</p>
+      <div className="mx-4 max-w-lg rounded-lg border border-border bg-card p-6 shadow-xl">
+        <h3 className="text-lg font-medium text-card-foreground">{project?.name ?? "Preview"}</h3>
+        <p className="mt-2 text-sm text-muted">{project?.owner ?? ""}</p>
         <button
           type="button"
           onClick={onClose}
-          className="mt-4 rounded bg-slate-600 px-4 py-2 text-sm text-white hover:bg-slate-500"
+          className="mt-4 rounded bg-primary px-4 py-2 text-sm text-primary-foreground hover:opacity-90"
         >
           Close
         </button>

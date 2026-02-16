@@ -27,7 +27,7 @@ export function ProjectListPanel({
   emptyMessage = "No projects match your search.",
 }) {
   const searchInputClass =
-    "w-full rounded-md border border-slate-600/50 bg-slate-800/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-500 transition-colors focus:border-cyan-500/40 focus:outline-none focus:ring-1 focus:ring-cyan-500/30";
+    "w-full rounded-md border border-border bg-muted-bg/50 px-3 py-2 text-sm text-foreground placeholder-muted transition-colors focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring";
   return (
     <aside
       className="smarq-panel flex h-full min-h-[280px] min-w-0 flex-col"
@@ -50,7 +50,7 @@ export function ProjectListPanel({
       <div className="flex-1 overflow-y-auto p-2">
         {loading && (
           <div
-            className="flex items-center justify-center py-8 text-slate-500"
+            className="flex items-center justify-center py-8 text-muted"
             role="status"
             aria-live="polite"
           >
@@ -58,7 +58,7 @@ export function ProjectListPanel({
           </div>
         )}
         {!loading && projects.length === 0 && (
-          <p className="py-6 text-center text-sm text-slate-500" role="status">
+          <p className="py-6 text-center text-sm text-muted" role="status">
             {emptyMessage}
           </p>
         )}
@@ -77,7 +77,7 @@ export function ProjectListPanel({
                 >
                   <span className="flex items-center gap-2">
                     <StatusIndicator status={project.status} />
-                    <span className="truncate text-slate-200">{project.name}</span>
+                    <span className="truncate text-foreground">{project.name}</span>
                   </span>
                 </button>
               </li>

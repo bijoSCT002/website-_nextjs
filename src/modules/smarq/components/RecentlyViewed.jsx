@@ -23,7 +23,7 @@ export const RecentlyViewed = ({ recentlyViewed = [] }) => {
                         className="smarq-scroll-row__item smarq-scroll-row__item--empty"
                         role="listitem"
                     >
-                        <span className="text-sm text-slate-500">No recently viewed projects</span>
+                        <span className="text-sm text-muted">No recently viewed projects</span>
                     </div>
                 )}
             </div>

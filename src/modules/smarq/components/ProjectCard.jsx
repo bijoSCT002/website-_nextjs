@@ -30,12 +30,12 @@ export function ProjectCard({ project, isRecent }) {
     >
       <div className="flex items-center gap-2">
         <StatusDot status={project.status} />
-        <span className="text-xs uppercase tracking-wide text-slate-500">
+        <span className="text-xs uppercase tracking-wide text-muted">
           {project.status}
         </span>
       </div>
-      <h3 className="mt-2 truncate font-medium text-white">{project.name}</h3>
-      <p className="mt-1 truncate text-sm text-slate-400">{project.owner}</p>
+      <h3 className="mt-2 truncate font-medium text-foreground">{project.name}</h3>
+      <p className="mt-1 truncate text-sm text-muted">{project.owner}</p>
     </Link>
   );
 }

@@ -3,18 +3,31 @@
  * Apply theme by setting data-theme on <html>. No inline styles.
  */
 
-/* Default (fallback) – Dark AI, SMARQ logo green #4CD137 */
-/* Background: dark black with subtle green circuit/network pattern (Reference image) */
+/* Default (fallback) – Dark AI */
 :root,
 [data-theme="dark-ai"] {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 2%;
+  --card-foreground: 0 0% 98%;
+  --muted: 0 0% 8%;
+  --muted-foreground: 215 16% 47%;
+  --primary: 142 76% 36%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 98%;
+  --border: 142 76% 36% / 0.2;
+  --input: 0 0% 12%;
+  --ring: 142 76% 36%;
+  --destructive: 0 84% 60%;
   --theme-bg: 5 5 8;
   --theme-bg-page: 0 0 0;
   --theme-bg-card: 255 255 255 / 0.04;
-  --theme-accent: 76 209 55;      /* SMARQ logo green #4CD137 */
+  --theme-accent: 76 209 55;
   --theme-accent-muted: 76 209 55 / 0.15;
   --theme-border: 76 209 55 / 0.12;
   --theme-border-glow: 76 209 55 / 0.25;
-  --theme-text: 248 250 252;      /* slate-50 */
+  --theme-text: 248 250 252;
   --theme-text-secondary: 148 163 184;
   --theme-text-muted: 100 116 139;
   --theme-shadow: 0 4px 20px -4px rgb(0 0 0 / 0.25);
@@ -24,10 +37,24 @@
 
 /* Deep Space */
 [data-theme="deep-space"] {
+  --background: 222 47% 7%;
+  --foreground: 210 40% 98%;
+  --card: 222 47% 11%;
+  --card-foreground: 210 40% 98%;
+  --muted: 222 47% 15%;
+  --muted-foreground: 215 20% 55%;
+  --primary: 239 84% 67%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 222 47% 18%;
+  --secondary-foreground: 210 40% 98%;
+  --border: 215 28% 27% / 0.5;
+  --input: 222 47% 18%;
+  --ring: 239 84% 67%;
+  --destructive: 0 84% 60%;
   --theme-bg: 15 23 42;
-  --theme-bg-page: 3 7 18;       /* near black, blue tint */
+  --theme-bg-page: 3 7 18;
   --theme-bg-card: 30 41 59 / 0.6;
-  --theme-accent: 129 140 248;   /* indigo-400 */
+  --theme-accent: 129 140 248;
   --theme-accent-muted: 129 140 248 / 0.12;
   --theme-border: 71 85 105 / 0.2;
   --theme-border-glow: 129 140 248 / 0.3;
@@ -40,14 +67,28 @@
 
 /* Neon Matrix */
 [data-theme="neon-matrix"] {
-  --theme-bg: 6 15 12;           /* dark green-black */
+  --background: 152 69% 4%;
+  --foreground: 152 69% 97%;
+  --card: 152 69% 8%;
+  --card-foreground: 152 69% 97%;
+  --muted: 152 69% 12%;
+  --muted-foreground: 152 50% 55%;
+  --primary: 152 69% 39%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 152 69% 15%;
+  --secondary-foreground: 152 69% 97%;
+  --border: 152 69% 39% / 0.3;
+  --input: 152 69% 15%;
+  --ring: 152 69% 39%;
+  --destructive: 0 84% 60%;
+  --theme-bg: 6 15 12;
   --theme-bg-page: 2 8 6;
   --theme-bg-card: 20 83 45 / 0.2;
-  --theme-accent: 34 197 94;     /* green-500 */
+  --theme-accent: 34 197 94;
   --theme-accent-muted: 34 197 94 / 0.12;
   --theme-border: 34 197 94 / 0.15;
   --theme-border-glow: 34 197 94 / 0.4;
-  --theme-text: 220 252 231;     /* green-50 */
+  --theme-text: 220 252 231;
   --theme-text-secondary: 134 239 172;
   --theme-text-muted: 74 222 128 / 0.7;
   --theme-shadow: 0 4px 20px -4px rgb(0 0 0 / 0.35);
@@ -56,14 +97,28 @@
 
 /* Industrial Graphite */
 [data-theme="industrial-graphite"] {
+  --background: 240 4% 9%;
+  --foreground: 0 0% 96%;
+  --card: 240 4% 14%;
+  --card-foreground: 0 0% 96%;
+  --muted: 240 4% 18%;
+  --muted-foreground: 240 5% 45%;
+  --primary: 240 5% 65%;
+  --primary-foreground: 240 4% 9%;
+  --secondary: 240 4% 22%;
+  --secondary-foreground: 0 0% 96%;
+  --border: 240 5% 34% / 0.5;
+  --input: 240 4% 22%;
+  --ring: 240 5% 65%;
+  --destructive: 0 84% 60%;
   --theme-bg: 30 31 33;
   --theme-bg-page: 18 18 20;
   --theme-bg-card: 63 63 70 / 0.4;
-  --theme-accent: 161 161 170;   /* zinc-400 */
+  --theme-accent: 161 161 170;
   --theme-accent-muted: 161 161 170 / 0.15;
   --theme-border: 82 82 91 / 0.4;
   --theme-border-glow: 212 212 216 / 0.25;
-  --theme-text: 244 244 245;     /* zinc-100 */
+  --theme-text: 244 244 245;
   --theme-text-secondary: 161 161 170;
   --theme-text-muted: 113 113 122;
   --theme-shadow: 0 4px 18px -4px rgb(0 0 0 / 0.4);
@@ -90,6 +145,7 @@
   --input: 240 5.9% 90%;
   --ring: 240 5.9% 10%;
   --radius: 0.375rem;
+  --destructive: 0 84% 60%;
   /* Map to existing theme vars for compatibility */
   --theme-bg: 248 250 252;
   --theme-bg-page: 250 250 250;
@@ -116,22 +172,30 @@
   background: hsl(var(--background));
 }
 
-/* Apply theme to root so it affects the whole page */
+/* Apply theme to root – token-based for automatic contrast */
 html {
-  background-color: rgb(var(--theme-bg-page));
-  color: rgb(var(--theme-text));
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
 }
 
-/* App and page wrappers – use these so theme affects the UI */
+html body {
+  color: inherit;
+}
+
+html h1, html h2, html h3, html h4, html h5, html h6 {
+  color: inherit;
+}
+
+/* App and page wrappers – token-based */
 .theme-app {
   min-height: 100vh;
-  background-color: rgb(var(--theme-bg-page));
-  color: rgb(var(--theme-text));
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
 }
 
-/* Dark AI: plain dark background */
+/* Dark AI: plain background */
 [data-theme="dark-ai"] .theme-app {
-  background-color: rgb(var(--theme-bg-page));
+  background-color: hsl(var(--background));
   background-image: none;
 }
 
@@ -143,26 +207,26 @@ html {
 .theme-page-gradient {
   background: linear-gradient(
     to bottom right,
-    rgb(var(--theme-bg-page)),
-    rgb(var(--theme-bg)),
-    rgb(var(--theme-bg-page))
+    hsl(var(--background)),
+    hsl(var(--muted)),
+    hsl(var(--background))
   );
 }
 
 .theme-page-gradient-simple {
   background: linear-gradient(
     to bottom,
-    rgb(var(--theme-bg-page)),
-    rgb(var(--theme-bg))
+    hsl(var(--background)),
+    hsl(var(--muted))
   );
 }
 
 .theme-text {
-  color: rgb(var(--theme-text));
+  color: hsl(var(--foreground));
 }
 
 .theme-text-muted {
-  color: rgb(var(--theme-text-muted));
+  color: hsl(var(--muted-foreground));
 }
 
 /* Smooth theme transitions; respect reduced motion */
@@ -180,35 +244,35 @@ html {
   }
 }
 
-/* Theme switcher – uses theme variables so no inline styles needed */
+/* Theme switcher – token-based */
 .theme-switcher-btn {
-  background-color: rgb(var(--theme-bg));
-  border: 1px solid rgb(var(--theme-border));
-  color: rgb(var(--theme-text));
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--foreground));
 }
 .theme-switcher-btn:hover {
-  background-color: rgb(var(--theme-bg-card));
+  background-color: hsl(var(--card));
 }
 .theme-switcher-list {
-  background-color: rgb(var(--theme-bg));
-  border: 1px solid rgb(var(--theme-border));
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
   box-shadow: var(--theme-shadow);
 }
 .theme-switcher-item:hover,
 .theme-switcher-item:focus {
-  background-color: rgb(var(--theme-bg-card));
+  background-color: hsl(var(--muted));
 }
 .theme-switcher-item {
-  color: rgb(var(--theme-text));
+  color: hsl(var(--card-foreground));
 }
 .theme-switcher-muted {
-  color: rgb(var(--theme-text-muted));
+  color: hsl(var(--muted-foreground));
 }
 .theme-switcher-focus {
   outline: none;
 }
 .theme-switcher-focus:focus-visible {
-  box-shadow: 0 0 0 2px rgb(var(--theme-accent));
+  box-shadow: 0 0 0 2px hsl(var(--ring));
 }
 
 /* --- Top bar and TopRightActions --- */
@@ -223,15 +287,15 @@ html {
   align-items: center;
   min-height: 3rem;
   padding: 0 1rem;
-  background-color: rgb(var(--theme-bg));
-  border-bottom: 1px solid rgb(var(--theme-border));
+  background-color: hsl(var(--background));
+  border-bottom: 1px solid hsl(var(--border));
 }
 
 .top-bar__logo {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: rgb(var(--theme-text));
+  color: hsl(var(--foreground));
   font-weight: 600;
   font-size: 1.125rem;
   letter-spacing: 0.02em;
@@ -239,12 +303,12 @@ html {
 }
 
 .top-bar__logo:hover {
-  color: rgb(var(--theme-accent));
+  color: hsl(var(--primary));
 }
 
 .top-bar__logo:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px rgb(var(--theme-accent));
+  box-shadow: 0 0 0 2px hsl(var(--ring));
 }
 
 .top-bar__logo-text {
@@ -269,19 +333,19 @@ html {
   border: none;
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
-  color: rgb(var(--theme-text));
+  color: hsl(var(--foreground));
   cursor: pointer;
   transition: color 0.15s ease;
   border-radius: 0.375rem;
 }
 
 .top-right-actions__btn:hover {
-  color: rgb(var(--theme-text-secondary));
+  color: hsl(var(--muted-foreground));
 }
 
 .top-right-actions__btn:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px rgb(var(--theme-accent));
+  box-shadow: 0 0 0 2px hsl(var(--ring));
 }
 
 .top-right-actions__btn--theme {
@@ -295,10 +359,10 @@ html {
   width: 0.875rem;
   height: 0.875rem;
   border-radius: 50%;
-  border: 1px solid rgb(var(--theme-text-muted));
+  border: 1px solid hsl(var(--muted-foreground));
   background: linear-gradient(
     to bottom,
-    rgb(var(--theme-accent)) 50%,
+    hsl(var(--primary)) 50%,
     transparent 50%
   );
 }
@@ -314,8 +378,8 @@ html {
   margin-top: 0.5rem;
   min-width: 200px;
   padding: 0.5rem;
-  background-color: rgb(var(--theme-bg-card));
-  border: 1px solid rgb(var(--theme-border));
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
   border-radius: 0.5rem;
   box-shadow: var(--theme-shadow);
 }
@@ -324,7 +388,7 @@ html {
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: rgb(var(--theme-text));
+  color: hsl(var(--foreground));
   margin-bottom: 0.25rem;
 }
 
@@ -338,23 +402,23 @@ html {
   border: none;
   border-radius: 0.5rem;
   font-size: 0.875rem;
-  color: rgb(var(--theme-text));
+  color: hsl(var(--card-foreground));
   cursor: pointer;
   transition: background 0.15s ease;
   text-align: left;
 }
 
 .top-right-actions__theme-option:hover {
-  background-color: rgb(var(--theme-accent-muted));
+  background-color: hsl(var(--muted));
 }
 
 .top-right-actions__theme-option--active {
-  background-color: rgb(var(--theme-accent-muted));
+  background-color: hsl(var(--muted));
 }
 
 .top-right-actions__theme-option:focus-visible {
   outline: none;
-  box-shadow: inset 0 0 0 2px rgb(var(--theme-accent));
+  box-shadow: inset 0 0 0 2px hsl(var(--ring));
 }
 
 .top-right-actions__preview {
@@ -362,7 +426,7 @@ html {
   width: 2.5rem;
   height: 1.5rem;
   border-radius: 0.25rem;
-  border: 1px solid rgb(var(--theme-border));
+  border: 1px solid hsl(var(--border));
 }
 
 .top-right-actions__preview--dark-ai {
@@ -399,11 +463,11 @@ html {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  border: 2px solid rgb(var(--theme-border));
+  border: 2px solid hsl(var(--border));
   background: transparent;
 }
 
 .top-right-actions__radio--selected {
-  border-color: rgb(var(--theme-accent));
-  background-color: rgb(var(--theme-accent));
+  border-color: hsl(var(--primary));
+  background-color: hsl(var(--primary));
 }

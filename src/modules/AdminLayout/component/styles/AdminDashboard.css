@@ -3,75 +3,48 @@
 /* Dashboard cards use theme variables for cross-theme compatibility. */
 
 .dashboard-card {
-  border-color: rgb(var(--theme-border));
-  background-color: rgb(var(--theme-bg-card));
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
   box-shadow: var(--theme-shadow);
 }
 
 .dashboard-card:hover {
-  border-color: rgb(var(--theme-border-glow));
-  background-color: rgb(var(--theme-bg-card));
+  border-color: hsl(var(--ring));
 }
 
 .dashboard-card:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px rgb(var(--theme-accent));
+  box-shadow: 0 0 0 2px hsl(var(--ring));
 }
 
 .dashboard-card__label {
   font-size: 1.125rem;
   font-weight: 600;
-  color: rgb(var(--theme-text));
+  color: hsl(var(--card-foreground));
   transition: color 0.15s ease;
 }
 
 .dashboard-card:hover .dashboard-card__label {
-  color: rgb(var(--theme-accent));
+  color: hsl(var(--primary));
 }
 
 .dashboard-card__desc {
   margin-top: 0.25rem;
   font-size: 0.875rem;
-  color: rgb(var(--theme-text-muted));
+  color: hsl(var(--muted-foreground));
   transition: color 0.15s ease;
 }
 
 .dashboard-card:hover .dashboard-card__desc {
-  color: rgb(var(--theme-text-secondary));
+  color: hsl(var(--foreground));
 }
 
 .dashboard-card--primary {
-  border-color: rgb(var(--theme-border-glow));
+  border-color: hsl(var(--ring));
 }
 
 .dashboard-card--primary:hover {
   box-shadow: var(--theme-shadow-glow);
-}
-
-[data-theme="dashboard"] .dashboard-card {
-  background-color: hsl(var(--card));
-  border-color: hsl(var(--border));
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-}
-
-[data-theme="dashboard"] .dashboard-card:hover {
-  border-color: hsl(var(--ring));
-}
-
-[data-theme="dashboard"] .dashboard-card__label {
-  color: hsl(var(--card-foreground));
-}
-
-[data-theme="dashboard"] .dashboard-card:hover .dashboard-card__label {
-  color: hsl(var(--primary));
-}
-
-[data-theme="dashboard"] .dashboard-card__desc {
-  color: hsl(var(--muted-foreground));
-}
-
-[data-theme="dashboard"] .dashboard-card:hover .dashboard-card__desc {
-  color: hsl(var(--foreground));
 }
 
 @media (prefers-reduced-motion: reduce) {
