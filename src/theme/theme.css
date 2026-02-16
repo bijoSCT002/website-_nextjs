@@ -19,7 +19,7 @@
   --theme-text-muted: 100 116 139;
   --theme-shadow: 0 4px 20px -4px rgb(0 0 0 / 0.25);
   --theme-shadow-glow: 0 0 24px -4px rgb(76 209 55 / 0.15);
-  --theme-bg-circuit: url("../assets/backgrounds/circuit-pattern.svg");
+  --theme-bg-circuit: none;
 }
 
 /* Deep Space */
@@ -70,6 +70,52 @@
   --theme-shadow-glow: 0 0 20px -4px rgb(212 212 216 / 0.08);
 }
 
+/* Dashboard – shadcn-style, neutral European (zinc), light mode */
+[data-theme="dashboard"] {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 5.9% 10%;
+  --radius: 0.375rem;
+  /* Map to existing theme vars for compatibility */
+  --theme-bg: 248 250 252;
+  --theme-bg-page: 250 250 250;
+  --theme-bg-card: 255 255 255;
+  --theme-accent: 24 24 27;
+  --theme-accent-muted: 24 24 27 / 0.08;
+  --theme-border: 228 228 231;
+  --theme-border-glow: 24 24 27 / 0.15;
+  --theme-text: 24 24 27;
+  --theme-text-secondary: 63 63 70;
+  --theme-text-muted: 113 113 122;
+  --theme-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --theme-shadow-glow: 0 0 0 1px rgb(0 0 0 / 0.05);
+  --theme-bg-circuit: none;
+}
+
+[data-theme="dashboard"] .theme-app {
+  background-color: hsl(var(--background));
+  background-image: none;
+}
+
+[data-theme="dashboard"] .theme-page-gradient,
+[data-theme="dashboard"] .theme-page-gradient-simple {
+  background: hsl(var(--background));
+}
+
 /* Apply theme to root so it affects the whole page */
 html {
   background-color: rgb(var(--theme-bg-page));
@@ -83,15 +129,10 @@ html {
   color: rgb(var(--theme-text));
 }
 
-/* Dark AI: circuit-board background (Reference image – glowing green on black) */
+/* Dark AI: plain dark background */
 [data-theme="dark-ai"] .theme-app {
-  background-color: #000;
-  background-image:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, transparent 50%, rgba(0, 0, 0, 0.15) 100%),
-    var(--theme-bg-circuit);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-color: rgb(var(--theme-bg-page));
+  background-image: none;
 }
 
 [data-theme="dark-ai"] .theme-page-gradient,
@@ -211,7 +252,7 @@ html {
 }
 
 .top-bar__logo-img {
-  height: 2rem;
+  height: 3.5rem;
   width: auto;
   display: block;
   object-fit: contain;
@@ -273,9 +314,9 @@ html {
   margin-top: 0.5rem;
   min-width: 200px;
   padding: 0.5rem;
-  background-color: rgb(15, 23, 42);
+  background-color: rgb(var(--theme-bg-card));
   border: 1px solid rgb(var(--theme-border));
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   box-shadow: var(--theme-shadow);
 }
 
@@ -304,7 +345,7 @@ html {
 }
 
 .top-right-actions__theme-option:hover {
-  background-color: rgb(255 255 255 / 0.06);
+  background-color: rgb(var(--theme-accent-muted));
 }
 
 .top-right-actions__theme-option--active {
@@ -342,6 +383,11 @@ html {
 .top-right-actions__preview--industrial-graphite {
   background-color: rgb(18, 18, 20);
   box-shadow: inset 0 2px 0 0 rgb(161, 161, 170);
+}
+
+.top-right-actions__preview--dashboard {
+  background-color: hsl(0 0% 100%);
+  box-shadow: inset 0 0 0 1px hsl(240 5.9% 90%);
 }
 
 .top-right-actions__theme-label {

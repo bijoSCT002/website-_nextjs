@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import { AdminLayout } from "./modules";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { AdminDashboard, DashboardLayout } from "./modules";
 import { AppLogo, TopRightActions, ErrorBoundary } from "./components";
 import smarqLogo from "./assets/logo/SMARQLogo.png";
 
@@ -45,17 +45,24 @@ function RouteFallback() {
 }
 
 export default function App() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   return (
     <Suspense fallback={<RouteFallback />}>
       <div className="theme-app">
-        <header className="top-bar" role="banner">
-          <AppLogo logoSrc={smarqLogo} alt="Smarq" />
-          <TopRightActions />
-        </header>
-        <div className="pt-12">
+        {!isHome && (
+          <header className="top-bar" role="banner">
+            <AppLogo logoSrc={smarqLogo} alt="Smarq" />
+            <TopRightActions />
+          </header>
+        )}
+        <div className={isHome ? "" : "pt-12"}>
           <ErrorBoundary>
           <Routes>
-        <Route path="/" element={<AdminLayout />} />
+        <Route path="/" element={<DashboardLayout />}>
+          <Route index element={<AdminDashboard />} />
+        </Route>
         <Route path="/smarq" element={<SmarqLayout />}>
           <Route index element={<ProjectListContainer />} />
           <Route path="archive" element={<ArchivedProjectsContainer />} />

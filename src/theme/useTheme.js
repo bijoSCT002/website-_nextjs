@@ -1,25 +1,22 @@
 import { useCallback } from "react";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { setTheme } from "../store/slices/themeSlice";
-import { selectTheme } from "../store/slices/themeSlice";
+import { useThemeStore } from "../stores/useThemeStore";
 import { THEMES } from "./themes";
 
 /**
- * Redux-backed theme hook. Same API as previous Context-based useTheme.
- * Returns { theme, setTheme }. Use anywhere inside the app (must be within Redux Provider).
+ * Theme hook. Returns { theme, setTheme }. Use anywhere in the app.
  */
 export function useTheme() {
-  const theme = useAppSelector(selectTheme);
-  const dispatch = useAppDispatch();
+  const theme = useThemeStore((s) => s.current);
+  const setThemeAction = useThemeStore((s) => s.setTheme);
 
-  const setThemeAction = useCallback(
+  const setTheme = useCallback(
     (themeId) => {
       if (THEMES.some((t) => t.id === themeId)) {
-        dispatch(setTheme(themeId));
+        setThemeAction(themeId);
       }
     },
-    [dispatch]
+    [setThemeAction]
   );
 
-  return { theme, setTheme: setThemeAction };
+  return { theme, setTheme };
 }

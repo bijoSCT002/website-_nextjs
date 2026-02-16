@@ -10,11 +10,11 @@ export function AdminDashboard() {
       role="main"
     >
       <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-        <header className="mb-8 text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <header className="mb-8">
+          <h1 className="text-3xl font-semibold tracking-tight theme-text sm:text-4xl">
             Admin Dashboard
           </h1>
-          <p className="mt-1 text-slate-400">Choose a section to get started</p>
+          <p className="mt-1 theme-text-muted">Choose a section to get started</p>
         </header>
 
         <nav

@@ -6,6 +6,7 @@ export const DEFAULT_THEME_ID = "dark-ai";
 
 export const THEMES = [
   { id: "dark-ai", label: "Dark AI" },
+  { id: "dashboard", label: "Dashboard" },
   { id: "deep-space", label: "Deep Space" },
   { id: "neon-matrix", label: "Neon Matrix" },
   { id: "industrial-graphite", label: "Industrial Graphite" },
@@ -13,7 +14,7 @@ export const THEMES = [
 
 export const STORAGE_KEY = "smarq-theme";
 
-/** Read persisted theme from localStorage. Used by Redux initial state and init. */
+/** Read persisted theme from localStorage. Used by store initial state and init. */
 export function getStoredTheme() {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
